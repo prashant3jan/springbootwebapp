@@ -20,6 +20,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<start-class>guru.springframework.SpringBootWebApplication</start-class>
 		<java.version>11</java.version>
 	</properties>
 
@@ -77,12 +78,28 @@
 							<goal>java</goal>
 						</goals>
 						<configuration>
-							<mainClass>com.example.MainClass</mainClass>
+							<mainClass>guru.springframework.SpringBootWebApplication</mainClass>
 							<!-- Additional configuration if needed -->
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>guru.springframework.SpringBootWebApplication</mainClass>
+					<layout>JAR</layout>
+				</configuration>
+                <executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+            </plugin>
 		</plugins>
 	</build>
 </project>
